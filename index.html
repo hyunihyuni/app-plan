@@ -159,7 +159,7 @@ h2.hero span{color:var(--pri)}
 .v2box input{width:100%;height:50px;border:1.5px solid var(--line);border-radius:10px;padding:0 14px;font-size:16px;background:#fff;outline:none}
 .v2box input:focus{border-color:var(--pri)}
 
-/* 사원증 */
+/* 이름표 */
 .idcard{border-radius:16px;background:linear-gradient(155deg,#1e293b,#0f172a);color:#fff;padding:22px;position:relative;overflow:hidden;box-shadow:0 10px 24px rgba(15,23,42,.18)}
 .idcard::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--pri)}
 .idcard .co{font-size:12px;letter-spacing:2px;font-weight:700;color:#a5b4fc}
@@ -403,7 +403,7 @@ const I={
 const ic=(n,s=20,w=2)=>`<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]||''}</svg>`;
 
 /* ===================== 데이터 ===================== */
-const STEP_NAMES=['사원증','개발 목적','사용자','사용 장면','기능','작동 규칙','이름·아이콘','화면 설계','기획서'];
+const STEP_NAMES=['이름표','개발 목적','사용자','사용 장면','기능','작동 규칙','이름·아이콘','화면 설계','기획서'];
 const LAST=STEP_NAMES.length;
 
 const PURPOSES=[
@@ -642,7 +642,7 @@ function introHTML(){
     {ic:'pill',name:'약 알림이',v1:'버튼을 누르면 “약 드실 시간이에요”를 읽어 줘요',v2:'정해진 시간이 되면 저절로 알려 줘요'},
     {ic:'globe',name:'제주 길 안내 통역기',v1:'한국어 문장을 영어로 번역해서 읽어 줘요',v2:'지도에 가는 길을 보여 줘요'},
     {ic:'smile',name:'기분 전환 버튼',v1:'폰을 흔들면 웃긴 소리와 사진이 나와요',v2:'친구와 점수 대결을 해요'}];
-  const phases=[['1','생각하기','사원증 · 목적 · 사용자 · 사용 장면'],['2','설계하기','기능 · 작동 규칙 · 이름 · 화면'],['3','소개하기','기획서 완성 · 1분 발표']];
+  const phases=[['1','생각하기','목적 · 사용자 · 사용 장면'],['2','설계하기','기능 · 작동 규칙 · 이름 · 화면'],['3','소개하기','기획서 완성 · 1분 발표']];
   return `
     <div class="eyebrow">MISSION BRIEFING</div>
     <h2 class="hero">오늘의 미션<br>내 앱의 <span>버전 1.0</span>을 기획하라</h2>
@@ -672,9 +672,9 @@ function panelHTML(){
   const s=S.step;
   if(s===0)return introHTML();
   if(s===1)return `
-    ${eyebrow(1,'사원증')}
-    <h2>신입 개발자 사원증 만들기</h2>
-    <p class="desc">오늘부터 여러분은 앱 개발 회사의 신입 개발자입니다. 사원증부터 발급받아요.</p>
+    ${eyebrow(1,'이름표')}
+    <h2>개발자 이름표 만들기</h2>
+    <p class="desc">오늘 여러분은 앱을 기획하는 개발자예요. 먼저 내 이름표부터 만들어요.</p>
     <div class="two">
       <div>
         <label class="field">개발자 이름 (내 이름)
